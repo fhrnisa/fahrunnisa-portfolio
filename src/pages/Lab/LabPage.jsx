@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import LabCard from '../../components/LabCard';
 import CallToAction from '../../components/CallToAction';
 import Footer from '../../components/Footer';
+import trampahLogo from '../../assets/images/lab/trampah-logo-hero.webp';
+import cloverTask from '../../assets/images/lab/clover-task-hero.webp';
+import dayflowAI from '../../assets/images/lab/dayflow-ai-hero.webp';
 
 const LAB_DATA = [
   {
@@ -10,7 +14,7 @@ const LAB_DATA = [
     filterCategory: "Code",
     description: "My first React project, from UI design to frontend implementation.",
     tags: ["UI Design", "Frontend", "React"],
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80"
+    image: cloverTask
   },
   {
     id: 2,
@@ -18,7 +22,7 @@ const LAB_DATA = [
     filterCategory: "Visual & Exploration",
     description: "Designing a meaningful logo inspired by the app's purpose and identity.",
     tags: ["UI Design", "Branding"],
-    image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80"
+    image: trampahLogo
   },
   {
     id: 3,
@@ -26,7 +30,7 @@ const LAB_DATA = [
     filterCategory: "Code",
     description: "Building an AI-powered scheduling assistant using the Gemini API.",
     tags: ["UI Design", "Frontend", "React"],
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80"
+    image: dayflowAI
   },
   {
     id: 4,
@@ -64,7 +68,7 @@ export default function LabPage({ onNavigate }) {
           <button
             key={cat}
             onClick={() => setActiveFilter(cat)}
-            className={`px-4 py-1.5 rounded-md text-xs font-medium border transition-all ${
+            className={`px-4 py-1.5 rounded-lg text-base font-medium border transition-all ${
               activeFilter === cat
                 ? 'bg-[#243c20] text-white border-[#243c20]'
                 : 'bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50'

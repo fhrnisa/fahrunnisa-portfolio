@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import CallToAction from '../../components/CallToAction';
-import WorkCard from "../../components/WorkCard";
+import WorkCard from '../../components/WorkCard';
+import trampahImage from "../../assets/images/works/trampah-mockup.webp";
+import beemathImage from "../../assets/images/works/beemath-mockup.webp";
+import printServiceImage from "../../assets/images/works/print-stationary-mockup.webp";
+import facilitiesReportImage from "../../assets/images/works/facilities-report-mockup.webp";
 
 // Data proyek tiruan sesuai gambar desain kamu
 const PROJECTS_DATA = [
@@ -8,41 +12,42 @@ const PROJECTS_DATA = [
     id: 1,
     title: "Trampah",
     filterCategory: "UI/UX",
-    tag: "UI/UX DESIGN",
+    category: "UI/UX DESIGN",
     description: "A smart waste management app for scanning, sorting, and educating Semarang residents to reduce waste accumulation.",
     role: "UI & Visual Asset Designer",
-    image: "https://images.unsplash.com/photo-1616440347437-b1c73416efc2?auto=format&fit=crop&w=600&q=80", // Ganti dengan path gambar aslimu nanti
+    image: trampahImage,
   },
   {
     id: 2,
     title: "BeeMath",
     filterCategory: "UI/UX",
-    tag: "MOBILE APP",
+    category: "MOBILE APP",
     description: "A math crossword application for children aged 8-12 that help improve counting skills, critical thinking, and problem solving in a fun way.",
     role: "UI & Game Asset Designer",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=600&q=80",
+    image: beemathImage,
   },
   {
     id: 3,
     title: "Print Service & Stationery",
     filterCategory: "Development",
-    tag: "E-COMMERCE WEBSITE",
+    category: "E-COMMERCE WEBSITE",
     description: "An e-commerce website for print services, stationery sales, and sales management.",
     role: "UI/UX Designer, Web Developer",
-    image: "https://images.unsplash.com/photo-1496181130204-755241524eab?auto=format&fit=crop&w=600&q=80",
+    image: printServiceImage,
   },
   {
     id: 4,
     title: "Facilities Improvement Report",
     filterCategory: "Development",
-    tag: "WEB DEVELOPMENT",
+    category: "WEB DEVELOPMENT",
     description: "Web-based platform for reporting campus facility issues and tracking maintenance requests.",
     role: "UI/UX Designer, Frontend Developer",
-    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80",
+    image: facilitiesReportImage,
   },
 ];
 
-export default function WorksPage({ onNavigate }) {
+// 🛠️ Prop onNavigate dihapus dari parameter
+export default function WorksPage() {
   const [activeFilter, setActiveFilter] = useState("All");
   const categories = ["All", "UI/UX", "Development"];
 
@@ -69,7 +74,7 @@ export default function WorksPage({ onNavigate }) {
           <button
             key={cat}
             onClick={() => setActiveFilter(cat)}
-            className={`px-4 py-1.5 rounded-md text-xs font-medium border transition-all ${
+            className={`px-4 py-1.5 rounded-lg text-base font-medium border transition-all ${
               activeFilter === cat
                 ? "bg-[#243c20] text-white border-[#243c20]"
                 : "bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50"
@@ -83,16 +88,17 @@ export default function WorksPage({ onNavigate }) {
       {/* List Kartu Proyek menggunakan Component Reusable */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 mb-24">
         {filteredProjects.map((project) => (
+          /* 🛠️ PERBAIKAN 1: Menghapus properti onNavigate dari WorkCard */
           <WorkCard 
             key={project.id} 
             project={project} 
-            onNavigate={onNavigate} 
           />
         ))}
       </div>
 
       {/* Komponen Call To Action */}
-      <CallToAction onNavigate={onNavigate} />
+      {/* 🛠️ PERBAIKAN 2: Menghapus properti onNavigate dari CallToAction */}
+      <CallToAction />
 
     </div>
   );

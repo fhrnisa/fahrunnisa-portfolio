@@ -1,5 +1,8 @@
 import React from 'react';
 import CallToAction from '../../../components/CallToAction';
+import cloverHero from '../../../assets/images/lab/clover-task-hero.webp';
+import cloverPreview from '../../../assets/images/lab/clover-task-preview.webp';
+
 
 // 1. Ikon Clover Kecil untuk List "What I Explored"
 function CloverIcon({ className = "h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" }) {
@@ -20,19 +23,6 @@ function CloverIcon({ className = "h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" 
   );
 }
 
-// 2. Ikon Star (Dipakai di bagian Reflection)
-function StarIcon({ className = "" }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path
-        d="M12 1.5c.3 5.4 2.6 7.7 9 9-6.4 1.3-8.7 3.6-9 9-.3-5.4-2.6-7.7-9-9 6.4-1.3 8.7-3.6 9-9Z"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
 
 // 3. Ikon Arrow Up Right (Koreksi: Ditambahkan agar tidak error di tombol live demo)
 function ArrowUpRightIcon({ className = "h-3.5 w-3.5" }) {
@@ -99,9 +89,9 @@ export default function CloverTaskDetail({ onNavigate }) {
 
       {/* 3. HERO IMAGE (Main Mockup) */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-20">
-        <div className="rounded-3xl overflow-hidden shadow-sm bg-neutral-100 aspect-[16/9]">
+        <div className="rounded-lg overflow-hidden shadow-sm bg-neutral-100 aspect-[16/9]">
           <img 
-            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80" 
+            src={cloverHero}
             alt="Clover Task Showcase" 
             className="w-full h-full object-cover"
           />
@@ -109,10 +99,10 @@ export default function CloverTaskDetail({ onNavigate }) {
       </div>
 
       {/* 4. CONTENT BLOCK (Overview & What I Explored) */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 space-y-16 mb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-16 mb-20">
         {/* Overview */}
         <section>
-          <h2 className="font-serif text-2xl text-neutral-900 mb-4">Overview</h2>
+          <h2 className="font-serif text-4xl font-semibold text-neutral-900 mb-4">Overview</h2>
           <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
             This project was my first hands-on experience with React. I designed the interface before implementing it, 
             allowing me to compare React's component-based structure with my previous experience using Laravel. 
@@ -122,7 +112,7 @@ export default function CloverTaskDetail({ onNavigate }) {
 
         {/* What I Explored */}
         <section>
-          <h2 className="font-serif text-2xl text-neutral-900 mb-6">What I Explored</h2>
+          <h2 className="font-serif text-4xl font-semibold text-neutral-900 mb-6">What I Explored</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {explorations.map((text, idx) => (
               <div key={idx} className="flex items-start gap-3">
@@ -137,19 +127,19 @@ export default function CloverTaskDetail({ onNavigate }) {
 
       {/* 5. INTERFACE PREVIEW & LIVE DEMO */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 mb-24 text-center">
-        <h2 className="font-serif text-2xl text-neutral-900 text-left max-w-3xl mx-auto mb-6">
+        <h2 className="font-serif text-4xl font-semibold text-neutral-900 text-left max-w-3xl mx-auto mb-6">
           Interface Preview
         </h2>
-        <div className="bg-[#5b9657] rounded-3xl p-6 sm:p-12 flex justify-center items-center mb-8 shadow-inner">
+        <div className="rounded-lg flex justify-center items-center mb-8 shadow-inner">
           <img 
-            src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80" 
+            src={cloverPreview}
             alt="Interface Preview UI" 
-            className="rounded-xl shadow-lg max-w-full h-auto"
+            className="rounded-lg shadow-lg max-w-full h-auto"
           />
         </div>
         
         <a
-          href="https://link-demo-kamu.com"
+          href="https://clover-tasks-app.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-2.5 text-xs font-medium text-neutral-800 transition-all hover:border-green-900 hover:text-green-900 active:scale-95 shadow-sm"
@@ -161,17 +151,9 @@ export default function CloverTaskDetail({ onNavigate }) {
       </div>
 
       {/* 6. REFLECTION BOX */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 mb-28">
-        <div className="relative border border-neutral-300 bg-white p-6 sm:p-8 rounded-2xl shadow-[4px_4px_0px_0px_rgba(27,51,30,0.1)]">
-          {/* KOREKSI OPTIONAL: Memanfaatkan StarIcon yang sudah kamu buat sebelumnya */}
-          <div className="absolute -top-3 -right-3 bg-[#faf8f5] p-1 text-neutral-400">
-            <StarIcon className="h-6 w-6 text-neutral-400 fill-white" />
-          </div>
-          <h2 className="font-serif text-xl text-neutral-900 mb-3">Reflection</h2>
-          <p className="text-sm text-neutral-600 leading-relaxed">
-            Building this project helped me understand React's way of thinking and made the transition from Laravel feel much more approachable.
-          </p>
-        </div>
+      <div className="max-w-4xl font-semibold mx-auto px-4 sm:px-6 mb-28">
+            
+            
       </div>
 
       {/* 7. CALL TO ACTION SECTION */}

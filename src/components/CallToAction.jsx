@@ -29,7 +29,7 @@ export default function CallToAction({
 
       {/* Konten Utama */}
       <div className="relative mx-auto max-w-2xl text-center">
-        <h2 className="font-serif text-4xl text-neutral-900 text-balance sm:text-5xl">{title}</h2>
+        <h2 className="font-serif text-4xl font-medium text-neutral-900 text-balance sm:text-5xl">{title}</h2>
         <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-neutral-500 sm:text-base">{description}</p>
         <div className="mt-8 flex justify-center">
           <button

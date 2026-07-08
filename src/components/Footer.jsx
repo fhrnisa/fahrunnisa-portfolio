@@ -1,5 +1,6 @@
-// src/components/Footer.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
+import nisaLogo from '../assets/fk-logo.png';
 
 function MailIcon({ className = "h-5 w-5" }) {
   return (
@@ -36,20 +37,26 @@ function GitHubIcon({ className = "h-5 w-5" }) {
   )
 }
 
-export default function Footer({ onNavigate }) {
-  const NAV_ITEMS = ["Works", "Lab", "About"];
+export default function Footer() {
+  // 🛠️ 3. Buat NAV_ITEMS menggunakan objek yang mendefinisikan label dan path rutenya
+  const NAV_ITEMS = [
+    { label: "Works", path: "/works" },
+    { label: "Lab", path: "/lab" },
+    { label: "About", path: "/about" },
+  ];
+
   const socials = [
-    { label: "Email", icon: MailIcon, href: "mailto:emailmu@domain.com" },
-    { label: "LinkedIn", icon: LinkedInIcon, href: "#" },
-    { label: "Instagram", icon: InstagramIcon, href: "#" },
-    { label: "GitHub", icon: GitHubIcon, href: "#" },
+    { label: "Email", icon: MailIcon, href: "mailto:kusuma.fahrunnisa@gmail.com" },
+    { label: "LinkedIn", icon: LinkedInIcon, href: "https://www.linkedin.com/in/fahrunnisa/" },
+    { label: "Instagram", icon: InstagramIcon, href: "https://www.instagram.com/madebyfnis/" },
+    { label: "GitHub", icon: GitHubIcon, href: "https://github.com/fhrnisa" },
   ];
 
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50 px-4 py-14 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <span className="font-serif text-2xl tracking-tight text-green-900">FK</span>
+          <img src={nisaLogo} alt="Fahrunnisa Logo" className="h-8 w-auto" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-500">
             A growing journey in UI/UX, shaped by visual thinking and curiosity.
           </p>
@@ -59,10 +66,14 @@ export default function Footer({ onNavigate }) {
           <h3 className="text-xs font-semibold uppercase tracking-widest text-neutral-800">Navigation</h3>
           <ul className="mt-4 space-y-3">
             {NAV_ITEMS.map((item) => (
-              <li key={item}>
-                <button onClick={() => onNavigate(item)} className="text-sm text-neutral-500 hover:text-green-900">
-                  {item}
-                </button>
+              <li key={item.label}>
+                {/* 🛠️ 4. Ubah <button> menjadi <Link> dengan atribut to */}
+                <Link 
+                  to={item.path} 
+                  className="text-sm text-neutral-500 hover:text-green-900 transition-colors"
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
@@ -72,7 +83,7 @@ export default function Footer({ onNavigate }) {
           <h3 className="text-xs font-semibold uppercase tracking-widest text-neutral-800">Connect</h3>
           <div className="mt-4 flex items-center gap-4">
             {socials.map(({ label, icon: Icon, href }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-green-900">
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-green-900 transition-colors">
                 <Icon />
               </a>
             ))}

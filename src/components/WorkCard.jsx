@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Gunakan Link di sini
 
 function ArrowRightIcon() {
   return (
@@ -8,15 +9,16 @@ function ArrowRightIcon() {
   );
 }
 
-export default function WorkCard({ project, onNavigate }) {
+// 🛠️ Prop onNavigate dihapus
+export default function WorkCard({ project }) {
   return (
-    <article className="group overflow-hidden rounded-3xl border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-green-900/30 hover:shadow-xl">
+    <article className="group overflow-hidden rounded-xl border border-neutral-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-green-900/30 hover:shadow-xl">
       <div className="grid gap-0 md:grid-cols-2">
-        <div className="overflow-hidden bg-neutral-100 p-3">
+        <div className="overflow-hidden bg-neutral-100 ">
           <img
             src={project.image || "/placeholder.svg"}
-            alt={project.imageAlt}
-            className="h-56 w-full rounded-2xl object-cover transition-transform duration-500 group-hover:scale-105 md:h-full"
+            alt={project.imageAlt || project.title}
+            className="h-56 w-full rounded-md object-cover transition-transform duration-500 group-hover:scale-105 md:h-full"
           />
         </div>
 
@@ -31,14 +33,14 @@ export default function WorkCard({ project, onNavigate }) {
           <div className="mt-1 text-sm text-neutral-700">{project.role}</div>
 
           <div className="mt-6">
-            {/* Navigasi bisa diarahkan ke halaman detail spesifik menggunakan project.id */}
-            <button
-              onClick={() => onNavigate("Works", project)}
+            {/* 🛠️ PERBAIKAN: Mengubah button menjadi Link dinamis sesuai ID project */}
+            <Link
+              to={`/works/${project.id}`}
               className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-800 transition-all hover:border-green-900 hover:text-green-900 active:scale-95"
             >
               View Details
               <ArrowRightIcon />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

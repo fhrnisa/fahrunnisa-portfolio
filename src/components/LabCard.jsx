@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Gunakan Link di sini
 
 function ArrowRightIcon() {
   return (
@@ -8,12 +9,13 @@ function ArrowRightIcon() {
   );
 }
 
-export default function LabCard({ project, onNavigate }) {
+// 🛠️ Prop onNavigate dihapus
+export default function LabCard({ project }) {
   return (
-    <article className="group flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-green-900/30 hover:shadow-xl">
+    <article className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-green-900/30 hover:shadow-xl">
       <div>
         {/* Kontainer Gambar */}
-        <div className="overflow-hidden bg-neutral-100 rounded-2xl aspect-[4/3]">
+        <div className="overflow-hidden bg-neutral-100 rounded-lg aspect-[4/3]">
           <img
             src={project.image || "/placeholder.svg"}
             alt={project.title}
@@ -44,13 +46,14 @@ export default function LabCard({ project, onNavigate }) {
 
       {/* Tombol View Details */}
       <div className="px-2 pb-2">
-        <button
-          onClick={() => onNavigate("LabDetail", project)}
+        {/* 🛠️ PERBAIKAN: Mengubah button menjadi Link dinamis sesuai ID project */}
+        <Link
+          to={`/lab/${project.id}`}
           className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white py-2.5 text-xs font-medium text-neutral-700 transition-all hover:border-green-900 hover:text-green-900 active:scale-98"
         >
           View Details
           <ArrowRightIcon />
-        </button>
+        </Link>
       </div>
     </article>
   );

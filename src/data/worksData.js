@@ -1,3 +1,8 @@
+import trampahImage from "../assets/images/works/trampah-mockup.webp";
+import beemathImage from "../assets/images/works/beemath-mockup.webp";
+import printServiceImage from "../assets/images/works/print-stationary-mockup.webp";
+import facilitiesReportImage from "../assets/images/works/facilities-report-mockup.webp";
+
 export const worksData = [
   {
     id: "trampah",

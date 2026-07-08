@@ -1,28 +1,46 @@
 // src/pages/Home.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // 🛠️ 1. Impor Link dari react-router-dom
 import { worksData } from '../data/worksData';
 import WorkCard from '../components/WorkCard';
 import CallToAction from '../components/CallToAction';
 
-function Hero({ onNavigate }) {
+function ArrowRightIcon() {
+  return (
+    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg>
+  );
+}
+
+// 🛠️ 2. Hapus prop onNavigate dari Hero
+function Hero() {
   return (
     <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-0 top-24 mx-auto h-72 w-[90%] max-w-3xl rounded-full bg-green-200/40 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-24 mx-auto h-72 w-[90%] max-w-3xl rounded-full bg-[#7EB26D]/20 blur-3xl" />
       <div className="relative mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-24 lg:py-28">
-        <p className="font-serif text-xl text-neutral-800 sm:text-2xl">Hi, I&apos;m Fahrunnisa!</p>
-        <h1 className="mt-4 font-serif text-4xl leading-tight tracking-tight text-neutral-900 text-balance sm:text-5xl lg:text-6xl">
+        <p className="font-serif font-medium text-xl text-neutral-800 sm:text-2xl">Hi, I&apos;m Fahrunnisa!</p>
+        <h1 className="mt-4 font-serif font-medium text-4xl leading-tight tracking-tight text-neutral-900 text-balance sm:text-5xl lg:text-6xl">
           Designing and Building Digital Experiences
         </h1>
         <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-neutral-500 sm:text-base">
           I enjoy transforming ideas into clean interfaces that are simple to use and meaningful to people.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <button onClick={() => onNavigate("Works")} className="rounded-full bg-green-900 px-7 py-3 text-sm font-medium text-white shadow hover:bg-green-800">
+          {/* 🛠️ 3. Ubah button "View Works" menjadi Link ke "/works" */}
+          <Link 
+            to="/works" 
+            className="rounded-full bg-[#2B4225] px-7 py-3 text-sm font-medium text-white shadow hover:bg-[#152817] block text-center"
+          >
             View Works
-          </button>
-          <button onClick={() => onNavigate("Contact")} className="rounded-full border border-neutral-300 bg-white px-7 py-3 text-sm font-medium text-neutral-800 hover:border-green-900">
+          </Link>
+          {/* 🛠️ 4. Ubah button "Hire Me" menjadi Link ke "/contact" */}
+          <Link 
+            to="/contact" 
+            className="rounded-full border border-neutral-300 bg-white px-7 py-3 text-sm font-medium text-neutral-800 hover:border-[#2B4225] block text-center"
+          >
             Hire Me
-          </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -49,14 +67,22 @@ function Stats() {
   );
 }
 
-export default function HomePage({ onNavigate }) {
+// 🛠️ 5. Hapus prop onNavigate dari HomePage
+export default function HomePage() {
   // Ambil data project dari file data terpisah
-  const featuredProjects = worksData; 
+  const featuredProjects = worksData.map(project => {
+    if (project.id === 1) return { ...project, image: trampahImage };
+    if (project.id === 2) return { ...project, image: beemathImage };
+    if (project.id === 3) return { ...project, image: printServiceImage };
+    if (project.id === 4) return { ...project, image: facilitiesReportImage };
+    return project;
+  });
 
   return (
     <div className="min-h-screen bg-neutral-50 font-sans text-neutral-900 antialiased">
       <main>
-        <Hero onNavigate={onNavigate} />
+        {/* 🛠️ 6. Bersihkan pemanggilan sub-komponen dari prop onNavigate */}
+        <Hero />
         <Stats />
         
         {/* Section Featured Projects */}
@@ -64,20 +90,32 @@ export default function HomePage({ onNavigate }) {
           <div className="mx-auto max-w-5xl">
             <div className="text-center">
               <p className="text-xs font-medium uppercase tracking-[0.25em] text-neutral-400">Selected Works</p>
-              <h2 className="mt-3 font-serif text-3xl text-neutral-900 sm:text-4xl">Featured Projects</h2>
+              <h2 className="mt-3 font-serif font-medium text-3xl text-neutral-900 sm:text-4xl">Featured Projects</h2>
             </div>
 
             <div className="mt-12 flex flex-col gap-8">
               {featuredProjects.map((project) => (
-                <WorkCard key={project.title} project={project} onNavigate={onNavigate} />
+                /* Di dalam WorkCard rutenya akan otomatis dinamis menggunakan project.id */
+                <WorkCard key={project.title} project={project} />
               ))}
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              {/* 🛠️ 7. Ubah button "View All Works" menjadi Link ke "/works" */}
+              <Link
+                to="/works"
+                className="inline-flex items-center gap-2 rounded-full bg-[#2B4225] px-7 py-3 text-sm font-medium text-white transition-all hover:bg-[#152817] hover:shadow-md active:scale-95"
+              >
+                View All Works
+                <ArrowRightIcon />
+              </Link>
             </div>
           </div>
         </section>
 
-        <CallToAction onNavigate={onNavigate} />
+        {/* 🛠️ 8. Komponen CTA bersih tanpa prop onNavigate */}
+        <CallToAction />
       </main>
-
     </div>
   );
 }
