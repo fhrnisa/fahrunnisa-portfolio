@@ -1,16 +1,35 @@
-# React + Vite
+# 🌿 Fahrunnisa's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website built with **React**, **Vite**, and **Tailwind CSS**. This project showcases my journey, skills, and creative exploration in Full-Stack Web Development and UI/UX Design.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- **Dynamic Work Showcase**: Interactive project cards displaying selected works with dynamic navigation.
+- **The Lab**: A dedicated space for UI/UX experiments, explorations, and design studies.
+- **State-Based Navigation**: Fast and clean single-page application experience.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewports.
+- **One-Click Contact**: Integrated direct chat access via WhatsApp and social links.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack & Tools
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend Framework:** React (Vite)
+- **Styling:** Tailwind CSS
+- **Icons:** Custom SVG Inline Icons (Heroicons style)
+- **Design & Assets:** Figma
+
+---
+
+## 📁 Project Structure
+
+The project follows a modular and organized structure to ensure clean code practices:
+
+```text
+src/
+├── assets/              # Static assets (images, icons, global styles)
+├── components/          # Reusable global UI components (Navbar, WorkCard, CTA, Footer)
+├── data/                # Static data arrays (worksData, labData)
+└── pages/               # Main page views (Home, About, Lab, Contact)
