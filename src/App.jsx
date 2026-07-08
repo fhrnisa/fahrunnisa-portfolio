@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import LabPage from './pages/Lab/LabPage';
 import WorksPage from './pages/Works/WorksPage';
-import CloverTaskDetail from './pages/Lab/Details/ClovertaskDetail';
+import CloverTaskDetail from './pages/Lab/Details/CloverTaskDetail';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('Home'); 
