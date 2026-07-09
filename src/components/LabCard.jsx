@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Gunakan Link di sini
+import { Link } from 'react-router-dom';
 
 function ArrowRightIcon() {
   return (
@@ -35,7 +35,7 @@ export default function LabCard({ project }) {
             {project.tags && project.tags.map((tag, idx) => (
               <span 
                 key={idx} 
-                className="rounded bg-green-50 px-2 py-0.5 text-[10px] font-medium text-green-800 border border-green-100/50"
+                className="rounded bg-[#E9F3E5] px-2 py-0.5 text-xs font-medium text-green-800 border border-green-100/50"
               >
                 {tag}
               </span>

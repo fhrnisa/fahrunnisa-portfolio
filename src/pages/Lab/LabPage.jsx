@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import trampahLogo from '../../assets/images/lab/trampah-logo-hero.webp';
 import cloverTask from '../../assets/images/lab/clover-task-hero.webp';
 import dayflowAI from '../../assets/images/lab/dayflow-ai-hero.webp';
+import beemathBGM from '../../assets/images/lab/beemath-bgm-hero.webp';
 
 const LAB_DATA = [
   {
@@ -21,7 +22,7 @@ const LAB_DATA = [
     title: "Trampah Logo",
     filterCategory: "Visual & Exploration",
     description: "Designing a meaningful logo inspired by the app's purpose and identity.",
-    tags: ["UI Design", "Branding"],
+    tags: ["Branding", "Logo Design"],
     image: trampahLogo
   },
   {
@@ -29,7 +30,7 @@ const LAB_DATA = [
     title: "DayFlow AI (Gemini API)",
     filterCategory: "Code",
     description: "Building an AI-powered scheduling assistant using the Gemini API.",
-    tags: ["UI Design", "Frontend", "React"],
+    tags: ["Gemini API", "Chatbot", "JavaScript"],
     image: dayflowAI
   },
   {
@@ -37,8 +38,8 @@ const LAB_DATA = [
     title: "BeeMath BGM",
     filterCategory: "Visual & Exploration",
     description: "Composing an original game soundtrack to support a fun learning experience.",
-    tags: ["Audio", "Multimedia"],
-    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+    tags: ["Game Audio", "Music Composition"],
+    image: beemathBGM
   }
 ];
 
@@ -68,7 +69,7 @@ export default function LabPage({ onNavigate }) {
           <button
             key={cat}
             onClick={() => setActiveFilter(cat)}
-            className={`px-4 py-1.5 rounded-lg text-base font-medium border transition-all ${
+            className={`px-4 py-1.5 rounded-lg text-sm md:text-base font-medium border transition-all ${
               activeFilter === cat
                 ? 'bg-[#243c20] text-white border-[#243c20]'
                 : 'bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50'

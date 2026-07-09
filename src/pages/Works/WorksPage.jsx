@@ -74,7 +74,7 @@ export default function WorksPage() {
           <button
             key={cat}
             onClick={() => setActiveFilter(cat)}
-            className={`px-4 py-1.5 rounded-lg text-base font-medium border transition-all ${
+            className={`px-4 py-1.5 rounded-lg text-sm md:text-base font-medium border transition-all ${
               activeFilter === cat
                 ? "bg-[#243c20] text-white border-[#243c20]"
                 : "bg-white text-neutral-600 border-neutral-200 hover:bg-neutral-50"
