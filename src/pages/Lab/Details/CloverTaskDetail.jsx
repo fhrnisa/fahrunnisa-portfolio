@@ -3,7 +3,6 @@ import CallToAction from '../../../components/CallToAction';
 import cloverHero from '../../../assets/images/lab/clover-task-hero.webp';
 import cloverPreview from '../../../assets/images/lab/clover-task-preview.webp';
 
-
 // 1. Ikon Clover Kecil untuk List "What I Explored"
 function CloverIcon({ className = "h-5 w-5 text-green-700 mt-0.5 flex-shrink-0" }) {
   return (
@@ -40,7 +39,7 @@ function ArrowUpRightIcon({ className = "h-3.5 w-3.5" }) {
   );
 }
 
-export default function CloverTaskDetail({ onNavigate }) {
+export default function CloverTaskDetail() {
   // Data statis spesifik untuk proyek Clover Task sesuai gambar
   const metaData = [
     { label: "CATEGORY", value: "Frontend Experiment" },

@@ -1,4 +1,4 @@
-import { Trophy, ScanLine, Share2, Gift, Check, ArrowUpRight, Quote, } from "lucide-react";
+import { FileUp, Store, LayoutDashboard, Check, ArrowUpRight, Quote, } from "lucide-react";
 import printStationaryMockup from "../../../assets/images/works/print-stationary-mockup.webp";
 
 const META = [
@@ -28,17 +28,17 @@ const CONTRIBUTIONS = [
 
 const SOLUTIONS = [
   {
-    icon: ScanLine,
+    icon: FileUp,
     title: "Smart Document Upload",
     body: "Allows customers to seamlessly upload files, customize print configurations (paper type, color/black-and-white, layout), and minimize file-handling errors.",
   },
   {
-    icon: Share2,
+    icon: Store,
     title: "Stationery Catalog & Checkout",
     body: "A structured, real-time catalog featuring current stationery stock with an integrated, intuitive shopping cart and checkout pipeline.",
   },
   {
-    icon: Gift,
+    icon: LayoutDashboard,
     title: "Centralized Admin Dashboard",
     body: "Replaces manual paperwork with a digital ledger for the owner to monitor order queues, track payment statuses, and organize inventory efficiently.",
   },
@@ -49,7 +49,7 @@ const OUTCOMES = [
   "Pitch-ready product; successfully presented the complete system architecture and application workflow to the internal assessor team.",
 ]
 
-export default function PrintServiceStationaryCaseStudy({ onNavigate = () => {} }) {
+export default function PrintServiceStationaryDetail() {
   return (
     <main className="min-h-screen bg-[#faf8f5] font-sans text-[#1a1a1a]">
       {/* Header */}
@@ -85,13 +85,6 @@ export default function PrintServiceStationaryCaseStudy({ onNavigate = () => {} 
           </div>
         </div>
 
-        {/* Award badge */}
-        <div className="mt-8 inline-flex items-center gap-2 rounded-lg border border-[#e6e2da] bg-white px-4 py-2.5">
-          <Trophy className="h-4 w-4 text-green-900" strokeWidth={2} />
-          <span className="text-sm text-[#1a1a1a]">
-            1st Place — National UI/UX Competition GENETIC 2024
-          </span>
-        </div>
       </header>
 
       {/* Hero mockup */}
@@ -195,25 +188,30 @@ export default function PrintServiceStationaryCaseStudy({ onNavigate = () => {} 
         </div>
       </section>
 
-      {/* Final Interface Design */}
-      <section className="bg-[#f2f0ea]">
+      {/* Current State & Code Repository */}
+      <section className="bg-[#f2f0ea] border-y border-[#eceae4]">
         <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
-          <h2 className="font-serif font-medium text-3xl md:text-4xl">
-            Final Interface Design
-          </h2>
-          <p className="mt-3 text-sm md:text-lg text-[#666666]">
-            High-Fidelity Wireframes designed in Figma.{" "}
-            <a
-              href="https://www.figma.com/proto/l15QutAVzYpitiXOsbl1k2/Trampah?node-id=254-980&t=0lfg7JDUc35fJtJR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=254%3A980&show-proto-sidebar=1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-green-800 underline decoration-green-800/40 underline-offset-4 transition-colors hover:text-green-900 hover:decoration-green-900"
-            >
-              View prototype here.
-            </a>
-          </p>
-          <div className="mt-8 overflow-hidden rounded-lg bg-[#dce8d5] shadow-lg shadow-green-900/5">
-
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
+            <div>
+              <h2 className="font-serif font-medium text-3xl md:text-4xl">
+                Current State
+              </h2>
+              <p className="mt-4 text-sm md:text-base lg:text-lg leading-relaxed text-[#666666]">
+                <li>Completed: End-to-end stationery retail system (Backend & Frontend), Laravel-MySQL database integration, Core Admin Dashboard structure, and successful workflow presentation to assessors.</li>
+                <li>In Pipeline: Document processing queue and print service logic automation are currently in the active development phase.</li>
+              </p>
+            </div>
+            <div className="flex md:justify-end">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 rounded-full bg-green-900 px-6 py-3.5 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-green-950 hover:shadow-md"
+              >
+                Explore GitHub Repository
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -241,14 +239,13 @@ export default function PrintServiceStationaryCaseStudy({ onNavigate = () => {} 
             <div className="relative mt-8">
               <Quote className="absolute -left-1 -top-2 h-6 w-6 text-green-900/20" />
               <p className="pl-6 text-sm md:text-lg italic leading-relaxed text-[#666666]">
-                &ldquo;Designing Trampah taught me that the most complex
-                societal issues, like waste management, often require the
-                simplest digital interventions. By focusing on reducing friction
-                in the sorting process and humanizing the waste collection
-                ecosystem, we were able to present a concept that resonated
-                deeply with the jury. This project reinforced my belief that
-                design is not just about aesthetics, but about facilitating
-                positive behavioral shifts within a community.&rdquo;
+                &ldquo;Building this project from scratch—from conducting stakeholder 
+                interviews to UI design and full-stack implementation—gave me a holistic 
+                understanding of the Software Development Life Cycle (SDLC). Navigating 
+                technical roadblocks in Laravel pushed my problem-solving limits. While 
+                time constraints and technical learning curves kept the printing module 
+                in the pipeline, this project fundamentally shaped my core capabilities 
+                as a junior developer.&rdquo;
               </p>
             </div>
           </div>

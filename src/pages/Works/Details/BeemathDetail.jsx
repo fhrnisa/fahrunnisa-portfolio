@@ -23,7 +23,7 @@ const CONTRIBUTIONS = [
   {
     no: "◆",
     title: "Additional Contributions",
-    body: "Composed original background music in BandLab as an additional contribution beyond the main design role.",
+    body: "Composed original background music in BandLab as an additional contribution beyond the main design role. <a href='#' target='_blank' rel='noopener noreferrer' className='font-medium text-green-800 underline decoration-green-800/40 underline-offset-4 transition-colors hover:text-green-900 hover:decoration-green-900'>Explore music process here.</a>",
   },
 ]
 
@@ -51,7 +51,7 @@ const OUTCOMES = [
   "Created original background music in BandLab as a personal additional achievement.",
 ]
 
-export default function BeemathCaseStudy({ onNavigate = () => {} }) {
+export default function BeemathCaseStudy() {
   return (
     <main className="min-h-screen bg-[#faf8f5] font-sans text-[#1a1a1a]">
       {/* Header */}

@@ -53,24 +53,24 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-neutral-200 bg-neutral-50 px-4 py-14 sm:px-6 lg:px-8">
+    <footer className="border-t border-neutral-200 bg-neutral-50 px-6 py-14 md:px-8">
       <div className="mx-auto grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <img src={nisaLogo} alt="Fahrunnisa Logo" className="h-8 w-auto" />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-500">
+          <p className="mt-4 max-w-xs text-sm md:text-base leading-relaxed text-neutral-500">
             A growing journey in UI/UX, shaped by visual thinking and curiosity.
           </p>
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-neutral-800">Navigation</h3>
+          <h3 className="text-xs md:text-sm font-semibold uppercase tracking-widest text-neutral-800">Navigation</h3>
           <ul className="mt-4 space-y-3">
             {NAV_ITEMS.map((item) => (
               <li key={item.label}>
                 {/* 🛠️ 4. Ubah <button> menjadi <Link> dengan atribut to */}
                 <Link 
                   to={item.path} 
-                  className="text-sm text-neutral-500 hover:text-green-900 transition-colors"
+                  className="text-sm md:text-base text-neutral-500 hover:text-green-900 transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -80,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold uppercase tracking-widest text-neutral-800">Connect</h3>
+          <h3 className="text-xs md:text-sm font-semibold uppercase tracking-widest text-neutral-800">Connect</h3>
           <div className="mt-4 flex items-center gap-4">
             {socials.map(({ label, icon: Icon, href }) => (
               <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-green-900 transition-colors">
