@@ -23,20 +23,20 @@ export default function WorkCard({ project }) {
         </div>
 
         <div className="flex flex-col justify-center p-6 sm:p-8">
-          <span className="text-[11px] font-medium uppercase tracking-widest text-neutral-400">{project.category}</span>
-          <h3 className="mt-2 font-serif text-2xl text-neutral-900 sm:text-3xl">{project.title}</h3>
-          <p className="mt-3 text-sm leading-relaxed text-neutral-500">{project.description}</p>
+          <span className="text-xs md:text-sm font-medium uppercase tracking-widest text-neutral-400">{project.category}</span>
+          <h3 className="mt-2 font-medium text-2xl text-neutral-900 sm:text-3xl">{project.title}</h3>
+          <p className="mt-3 text-sm md:text-base lg:text-lg leading-relaxed text-neutral-500">{project.description}</p>
 
           <hr className="my-5 border-neutral-200" />
 
           <div className="text-sm font-medium text-green-800">Role:</div>
-          <div className="mt-1 text-sm text-neutral-700">{project.role}</div>
+          <div className="mt-1 text-sm md:text-base lg:text-lg text-neutral-700">{project.role}</div>
 
           <div className="mt-6">
-            {/* 🛠️ PERBAIKAN: Mengubah button menjadi Link dinamis sesuai ID project */}
+
             <Link
-              to={`/works/${project.id}`}
-              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-medium text-neutral-800 transition-all hover:border-green-900 hover:text-green-900 active:scale-95"
+              to={`/works/${project.path}`}
+              className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm md:text-base font-medium text-neutral-800 transition-all hover:border-green-900 hover:text-green-900 active:scale-95"
             >
               View Details
               <ArrowRightIcon />

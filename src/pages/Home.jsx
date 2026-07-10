@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom'; // 🛠️ 1. Impor Link dari react-router-dom
 import { worksData } from '../data/worksData';
@@ -13,7 +12,6 @@ function ArrowRightIcon() {
   );
 }
 
-// 🛠️ 2. Hapus prop onNavigate dari Hero
 function Hero() {
   return (
     <section className="relative overflow-hidden">
@@ -23,18 +21,18 @@ function Hero() {
         <h1 className="mt-4 font-serif font-medium text-4xl leading-tight tracking-tight text-neutral-900 text-balance sm:text-5xl lg:text-6xl">
           Designing and Building Digital Experiences
         </h1>
-        <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-neutral-500 sm:text-base">
+        <p className="mx-auto mt-6 max-w-md text-sm md:text-base lg:text-lg leading-relaxed text-neutral-500 sm:text-base">
           I enjoy transforming ideas into clean interfaces that are simple to use and meaningful to people.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          {/* 🛠️ 3. Ubah button "View Works" menjadi Link ke "/works" */}
+
           <Link 
             to="/works" 
             className="rounded-full bg-[#2B4225] px-7 py-3 text-sm font-medium text-white shadow hover:bg-[#152817] block text-center"
           >
             View Works
           </Link>
-          {/* 🛠️ 4. Ubah button "Hire Me" menjadi Link ke "/contact" */}
+
           <Link 
             to="/contact" 
             className="rounded-full border border-neutral-300 bg-white px-7 py-3 text-sm font-medium text-neutral-800 hover:border-[#2B4225] block text-center"
@@ -54,34 +52,29 @@ function Stats() {
     { value: "1", label: "National-Level UI/UX Award" },
   ];
   return (
-    <section className="border-y border-neutral-200 bg-white">
-      <div className="mx-auto grid max-w-4xl grid-cols-1 divide-y divide-neutral-200 px-4 py-10 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-6">
-        {STATS.map((stat) => (
-          <div key={stat.label} className="px-4 py-4 text-center sm:py-0">
-            <div className="font-serif text-4xl text-neutral-900 sm:text-5xl">{stat.value}</div>
-            <div className="mt-2 text-[11px] font-medium uppercase tracking-widest text-neutral-500">{stat.label}</div>
+  <section className="border-y border-neutral-200 bg-white">
+    <div className="mx-auto grid max-w-4xl grid-cols-3 divide-x divide-neutral-200 px-4 py-8 sm:px-6 sm:py-8">
+      {STATS.map((stat) => (
+        <div key={stat.label} className="px-2 py-2 text-center sm:px-4 sm:py-0">
+          <div className="font-serif text-2xl text-neutral-900 sm:text-4xl md:text-5xl">{stat.value}</div>
+          <div className="mt-1 text-[9px] font-medium uppercase tracking-tight text-neutral-500 sm:mt-2 sm:text-[11px] sm:tracking-widest">
+            {stat.label}
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      ))}
+    </div>
+  </section>
   );
 }
 
 // 🛠️ 5. Hapus prop onNavigate dari HomePage
 export default function HomePage() {
-  // Ambil data project dari file data terpisah
-  const featuredProjects = worksData.map(project => {
-    if (project.id === 1) return { ...project, image: trampahImage };
-    if (project.id === 2) return { ...project, image: beemathImage };
-    if (project.id === 3) return { ...project, image: printServiceImage };
-    if (project.id === 4) return { ...project, image: facilitiesReportImage };
-    return project;
-  });
+  const featuredProjects = worksData.slice(0, 3);
 
   return (
     <div className="min-h-screen bg-neutral-50 font-sans text-neutral-900 antialiased">
       <main>
-        {/* 🛠️ 6. Bersihkan pemanggilan sub-komponen dari prop onNavigate */}
+  
         <Hero />
         <Stats />
         
@@ -95,13 +88,13 @@ export default function HomePage() {
 
             <div className="mt-12 flex flex-col gap-8">
               {featuredProjects.map((project) => (
-                /* Di dalam WorkCard rutenya akan otomatis dinamis menggunakan project.id */
+
                 <WorkCard key={project.title} project={project} />
               ))}
             </div>
 
             <div className="mt-8 flex justify-center">
-              {/* 🛠️ 7. Ubah button "View All Works" menjadi Link ke "/works" */}
+
               <Link
                 to="/works"
                 className="inline-flex items-center gap-2 rounded-full bg-[#2B4225] px-7 py-3 text-sm font-medium text-white transition-all hover:bg-[#152817] hover:shadow-md active:scale-95"
@@ -113,7 +106,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 🛠️ 8. Komponen CTA bersih tanpa prop onNavigate */}
         <CallToAction />
       </main>
     </div>

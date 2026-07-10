@@ -25,8 +25,8 @@ export default function LabCard({ project }) {
 
         {/* Konten Teks */}
         <div className="pt-5 pb-4 px-2">
-          <h3 className="font-serif text-2xl text-neutral-900 sm:text-3xl">{project.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-neutral-500 min-h-[40px] line-clamp-2">
+          <h3 className="font-medium text-2xl text-neutral-900 sm:text-3xl">{project.title}</h3>
+          <p className="mt-2 text-sm md:text-base lg:text-lg leading-relaxed text-neutral-500 min-h-[40px] line-clamp-2">
             {project.description}
           </p>
 
@@ -48,8 +48,8 @@ export default function LabCard({ project }) {
       <div className="px-2 pb-2">
         {/* 🛠️ PERBAIKAN: Mengubah button menjadi Link dinamis sesuai ID project */}
         <Link
-          to={`/lab/${project.id}`}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white py-2.5 text-xs font-medium text-neutral-700 transition-all hover:border-green-900 hover:text-green-900 active:scale-98"
+          to={`/lab/${project.path}`}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white py-2.5 text-sm md:text-base font-medium text-neutral-700 transition-all hover:border-green-900 hover:text-green-900 active:scale-98"
         >
           View Details
           <ArrowRightIcon />

@@ -1,55 +1,17 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { labData } from '../../data/labData';
 import LabCard from '../../components/LabCard';
 import CallToAction from '../../components/CallToAction';
 import Footer from '../../components/Footer';
-import trampahLogo from '../../assets/images/lab/trampah-logo-hero.webp';
-import cloverTask from '../../assets/images/lab/clover-task-hero.webp';
-import dayflowAI from '../../assets/images/lab/dayflow-ai-hero.webp';
-import beemathBGM from '../../assets/images/lab/beemath-bgm-hero.webp';
-
-const LAB_DATA = [
-  {
-    id: 1,
-    title: "Clover Task (To Do App)",
-    filterCategory: "Code",
-    description: "My first React project, from UI design to frontend implementation.",
-    tags: ["UI Design", "Frontend", "React"],
-    image: cloverTask
-  },
-  {
-    id: 2,
-    title: "Trampah Logo",
-    filterCategory: "Visual & Exploration",
-    description: "Designing a meaningful logo inspired by the app's purpose and identity.",
-    tags: ["Branding", "Logo Design"],
-    image: trampahLogo
-  },
-  {
-    id: 3,
-    title: "DayFlow AI (Gemini API)",
-    filterCategory: "Code",
-    description: "Building an AI-powered scheduling assistant using the Gemini API.",
-    tags: ["Gemini API", "Chatbot", "JavaScript"],
-    image: dayflowAI
-  },
-  {
-    id: 4,
-    title: "BeeMath BGM",
-    filterCategory: "Visual & Exploration",
-    description: "Composing an original game soundtrack to support a fun learning experience.",
-    tags: ["Game Audio", "Music Composition"],
-    image: beemathBGM
-  }
-];
 
 export default function LabPage({ onNavigate }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const categories = ['All', 'Visual & Exploration', 'Code'];
 
   const filteredLab = activeFilter === 'All'
-    ? LAB_DATA
-    : LAB_DATA.filter(item => item.filterCategory === activeFilter);
+    ? labData
+    : labData.filter(item => item.filterCategory === activeFilter);
 
   return (
     <div className="bg-[#faf8f5] min-h-screen pt-16">
@@ -58,7 +20,7 @@ export default function LabPage({ onNavigate }) {
         <span className="text-xs font-semibold uppercase tracking-widest text-neutral-400 block mb-2">
           My Exploration
         </span>
-        <h1 className="font-serif text-4xl sm:text-5xl text-neutral-950">
+        <h1 className="font-serif font-medium text-4xl sm:text-5xl text-neutral-950">
           The Projects Lab
         </h1>
       </div>

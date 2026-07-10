@@ -35,7 +35,7 @@ export default function Navbar() {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `text-sm transition-colors hover:text-green-900 ${
+                  `text-sm md:text-base transition-colors hover:text-green-900 ${
                     isActive ? "text-green-900 font-bold" : "text-neutral-600"
                   }`
                 }
