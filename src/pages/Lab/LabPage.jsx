@@ -5,7 +5,7 @@ import LabCard from '../../components/LabCard';
 import CallToAction from '../../components/CallToAction';
 import Footer from '../../components/Footer';
 
-export default function LabPage({ onNavigate }) {
+export default function LabPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const categories = ['All', 'Visual & Exploration', 'Code'];
 
@@ -48,14 +48,12 @@ export default function LabPage({ onNavigate }) {
           <LabCard 
             key={item.id}
             project={item}
-            onNavigate={onNavigate}
           />
         ))}
       </div>
 
       {/* Section CTA */}
-      <CallToAction onNavigate={onNavigate} />
-
+      <CallToAction />
     </div>
   );
 }

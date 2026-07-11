@@ -9,7 +9,6 @@ function ArrowRightIcon() {
   );
 }
 
-// 🛠️ Prop onNavigate dihapus
 export default function LabCard({ project }) {
   return (
     <article className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-neutral-200 bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:border-green-900/30 hover:shadow-xl">
@@ -46,7 +45,6 @@ export default function LabCard({ project }) {
 
       {/* Tombol View Details */}
       <div className="px-2 pb-2">
-        {/* 🛠️ PERBAIKAN: Mengubah button menjadi Link dinamis sesuai ID project */}
         <Link
           to={`/lab/${project.path}`}
           className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white py-2.5 text-sm md:text-base font-medium text-neutral-700 transition-all hover:border-green-900 hover:text-green-900 active:scale-98"

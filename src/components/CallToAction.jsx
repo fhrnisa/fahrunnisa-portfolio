@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import cloverBg from '../assets/clover-full.png'; 
 
 function ArrowUpRightIcon() {
@@ -11,7 +11,6 @@ function ArrowUpRightIcon() {
 }
 
 export default function CallToAction({ 
-  onNavigate, 
   title = "Have Something in Mind?", 
   description = "If you'd like to connect, discuss an opportunity, or simply say hello, I'd be happy to hear from you." 
 }) {
@@ -22,7 +21,6 @@ export default function CallToAction({
       <div 
         className="pointer-events-none absolute inset-0 bg-center bg-cover bg-no-repeat opacity-80"
         style={{
-          // Menggunakan backtick (``) dan ${cloverBg} untuk memanggil variabel di atas
           backgroundImage: `url(${cloverBg})`,
         }}
       />
@@ -32,13 +30,13 @@ export default function CallToAction({
         <h2 className="font-serif text-4xl lg:text-5xl font-medium text-neutral-900 text-balance sm:text-5xl">{title}</h2>
         <p className="mx-auto mt-5 max-w-md text-sm md:text-base lg:text-lg leading-relaxed text-neutral-500 sm:text-base">{description}</p>
         <div className="mt-8 flex justify-center">
-          <button
-            onClick={() => onNavigate("Contact")}
+          <Link
+            to="mailto:kusuma.fahrunnisa@gmail.com"
             className="inline-flex items-center gap-2 rounded-full bg-[#1b331e] px-7 py-3 text-sm font-medium text-white transition-all hover:bg-[#152817] hover:shadow-md active:scale-95"
           >
             Get in Touch
             <ArrowUpRightIcon />
-          </button>
+          </Link>
         </div>
       </div>
     </section>

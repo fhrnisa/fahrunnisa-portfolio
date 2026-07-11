@@ -66,11 +66,10 @@ export default function App() {
           <Route path="/works/print-service-stationery" element={<PrintServiceStationaryDetail />} />
 
           {/* Halaman Detail Project Lab */}
-          <Route path="/lab/clovertask" element={<CloverTaskDetail />} />
-          <Route path="/lab/dayflow" element={<DayFlowDetail />} />
-          <Route path="/lab/trampahlogo" element={<TrampahLogoDetail />} />
-          <Route path="/lab/beemathbgm" element={<BgmBeeMathDetail />} />
-
+          <Route path="/lab/clover-task" element={<CloverTaskDetail />} />
+          <Route path="/lab/dayflow-ai" element={<DayFlowDetail />} />
+          <Route path="/lab/trampah-logo" element={<TrampahLogoDetail />} />
+          <Route path="/lab/beemath-bgm" element={<BgmBeeMathDetail />} />
         </Routes>
       </main>
 

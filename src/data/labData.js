@@ -14,22 +14,22 @@ export const labData = [
     image: cloverTask
   },
   {
-      id: 2,
-      title: "DayFlow AI (Gemini API)",
-      filterCategory: "Code",
-      path: "/dayflow-ai",
-      description: "Building an AI-powered scheduling assistant using the Gemini API.",
-      tags: ["Gemini API", "Chatbot", "JavaScript"],
-      image: dayflowAI
+    id: 2,
+    title: "DayFlow AI (Gemini API)",
+    filterCategory: "Code",
+    path: "/dayflow-ai",
+    description: "Building an AI-powered scheduling assistant using the Gemini API.",
+    tags: ["Gemini API", "Chatbot", "JavaScript"],
+    image: dayflowAI
     },
     {
-    id: 4,
-    title: "BeeMath BGM",
-    filterCategory: "Visual & Exploration",
-    path: "/beemath-bgm",
-    description: "Composing an original game soundtrack to support a fun learning experience.",
-    tags: ["Game Audio", "Music Composition"],
-    image: beemathBGM
+      id: 3,
+      title: "BeeMath BGM",
+      filterCategory: "Visual & Exploration",
+      path: "/beemath-bgm",
+      description: "Composing an original game soundtrack to support a fun learning experience.",
+      tags: ["Game Audio", "Music Composition"],
+      image: beemathBGM
     },
     {
       id: 4,
