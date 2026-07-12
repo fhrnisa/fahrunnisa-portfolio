@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollButtons'; 
 import Home from './pages/Home';
 import About from './pages/About';
 
@@ -44,6 +45,28 @@ export default function App() {
     window.scrollTo(0, 0);
   };
 
+  const [showScrollTop, setShowScrollTop] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToBottom = () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex flex-col font-sans bg-[#faf8f5]">
       
@@ -73,6 +96,10 @@ export default function App() {
         </Routes>
       </main>
 
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col items-center gap-3">
+      {/* SCROLL TO TOP / BOTTOM BUTTONS */}
+      <ScrollToTop />
+
       {/* FLOATING WHATSAPP BUTTON */}
       <a 
         href="https://wa.me/628213306884?text=Hello%20Nisa,%20I%20would%20like%20to%20inquire%20about%20your%20services." 
@@ -85,6 +112,7 @@ export default function App() {
           <path d="M12.001 2C6.478 2 2 6.478 2 12c0 1.892.526 3.741 1.522 5.353L2 22l4.769-1.505A9.953 9.953 0 0 0 12.001 22C17.523 22 22 17.522 22 12S17.523 2 12.001 2zm0 18.148a8.096 8.096 0 0 1-4.135-1.132l-.297-.176-3.06.966.986-3.033-.192-.31A8.11 8.11 0 0 1 3.85 12c0-4.494 3.657-8.15 8.151-8.15 4.494 0 8.15 3.656 8.15 8.15 0 4.494-3.656 8.148-8.15 8.148z"/>
         </svg>
       </a>
+    </div>
 
       {/* FOOTER */}
       <Footer onNavigate={navigateTo} />

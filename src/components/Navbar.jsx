@@ -48,13 +48,12 @@ export default function Navbar() {
 
         {/* Contact Button & Mobile Toggle */}
         <div className="flex items-center gap-2">
-          {/* 🛠️ PERBAIKAN 3: Mengubah button Contact Desktop menjadi Link ke "/contact" */}
-          <Link
-            to="/contact"
+          <a
+            href="mailto:kusuma.fahrunnisa@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Fahrunnisa,"
             className="hidden rounded-full bg-[#2B4225] px-5 py-2 text-sm font-medium text-white transition-all hover:bg-[#152817] md:inline-block"
           >
             Contact
-          </Link>
+          </a>
           
           {/* Tombol Mobile Menu (Hamburger) - Tetap karena mengontrol state internal navbar */}
           <button 
@@ -93,13 +92,13 @@ export default function Navbar() {
             </NavLink>
           ))}
           
-          <Link
-            to="/contact"
+          <a
+            href="mailto:kusuma.fahrunnisa@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Fahrunnisa,"
             onClick={() => setOpen(false)}
             className="mt-1 block w-full text-center px-4 py-2.5 text-sm font-medium bg-green-900 text-white rounded-xl hover:bg-green-800 transition-colors"
           >
             Contact
-          </Link>
+          </a>
         </div>
       )}
     </header>

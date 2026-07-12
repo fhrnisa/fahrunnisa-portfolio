@@ -39,7 +39,6 @@ function ArrowUpRightIcon({ className = "h-3.5 w-3.5" }) {
 }
 
 export default function BGMBeemathDetail({ onNavigate }) {
-  // Data statis spesifik untuk proyek BGM Beemath sesuai gambar
   const metaData = [
     { label: "CATEGORY", value: "Music Experiment" },
     { label: "PROJECT TYPE", value: "Academic Project" },
@@ -139,7 +138,7 @@ export default function BGMBeemathDetail({ onNavigate }) {
         </div>
         
         <a
-          href="https://dayflow-ai-five.vercel.app/"
+          href="https://drive.google.com/file/u/0/d/1aHOYRlqpDCoBna-p-ZJRInrP8pbz-jSA/view?usp=drivesdk&pli=1"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-2.5 text-xs font-medium text-neutral-800 transition-all hover:border-green-900 hover:text-green-900 active:scale-95 shadow-sm"

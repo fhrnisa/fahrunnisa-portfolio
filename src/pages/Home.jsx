@@ -33,12 +33,12 @@ function Hero() {
             View Works
           </Link>
 
-          <Link 
-            to="/contact" 
-            className="rounded-full border border-neutral-300 bg-white px-7 py-3 text-sm font-medium text-neutral-800 hover:border-[#2B4225] block text-center"
+          <a 
+            href="mailto:kusuma.fahrunnisa@gmail.com?subject=Project%20Inquiry%20-%20Fahrunnisa&body=Hi%20Fahrunnisa," 
+            className="rounded-full border border-neutral-300 bg-white px-7 py-3 text-sm font-medium text-neutral-800 hover:border-[#2B4225] block text-center transition-colors"
           >
             Hire Me
-          </Link>
+          </a>
         </div>
       </div>
     </section>
@@ -48,7 +48,7 @@ function Hero() {
 function Stats() {
   const STATS = [
     { value: "2+", label: "Years Exploring Design" },
-    { value: "10+", label: "Projects Completed" },
+    { value: "8+", label: "Projects Completed" },
     { value: "1", label: "National-Level UI/UX Award" },
   ];
   return (
@@ -67,7 +67,6 @@ function Stats() {
   );
 }
 
-// 🛠️ 5. Hapus prop onNavigate dari HomePage
 export default function HomePage() {
   const featuredProjects = worksData.slice(0, 3);
 
