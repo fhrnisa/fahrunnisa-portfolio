@@ -59,7 +59,7 @@ export default function FacilitiesReportDetail() {
             </h1>
             <p className="mt-5 max-w-md text-sm md:text-base leading-relaxed text-[#666666]">
               A web-based ticketing system designed as a solution to streamline facility damage reporting
-               and maintenance tracking for the Faculty of Engineering at Universitas Negeri Semarang.
+               and maintenance tracking for the Faculty of Engineering at a University.
             </p>
           </div>
 
