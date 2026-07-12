@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollButtons'; 
@@ -20,7 +20,29 @@ import DayFlowDetail from './pages/Lab/Details/DayFlowDetail';
 import TrampahLogoDetail from './pages/Lab/Details/TrampahLogoDetail';
 import BgmBeeMathDetail from './pages/Lab/Details/BgmBeemathDetail';
 
+const PAGE_TITLES = {
+  '/': 'Home',
+  '/works': 'Works',
+  '/about': 'About',
+  '/lab': 'Lab',
+  '/works/beemath': 'BeeMath — Case Study',
+  '/works/trampah': 'Trampah — Case Study',
+  '/works/facilities-improvement-report': 'Facilities Report — Case Study',
+  '/works/print-service-stationery': 'Print Service Stationery — Case Study',
+  '/lab/clover-task': 'Clover Task (To Do App)',
+  '/lab/dayflow-ai': 'DayFlow AI (Gemini API)',
+  '/lab/trampah-logo': 'Trampah Logo',
+  '/lab/beemath-bgm': 'BeeMath Background Music',
+};
+
 export default function App() {
+   const location = useLocation();
+
+    useEffect(() => {
+      const title = PAGE_TITLES[location.pathname] || 'Fahrunnisa';
+      document.title = `${title} - Fahrunnisa`;
+    }, [location.pathname]);
+
   const [currentPage, setCurrentPage] = useState('Home'); 
   const renderPage = () => {
       switch (currentPage) {
